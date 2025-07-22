@@ -12,10 +12,11 @@ app.listen(3000, async () => {
     console.log('MongoDB Connected');
 
     const tweetRepo = new TweetRepository()
-    const tweet = await tweetRepo.getAll(0, 4)
-    if (tweet[0] && tweet[0].contentWithEmail !== undefined) {
-        console.log(tweet[0].contentWithEmail)
-    } else {
-        console.log('contentWithEmail property not found on tweet[0]')
-    }
+    await tweetRepo.create({content: 'With Hooks'})
+    // const tweet = await tweetRepo.getAll(0, 4)
+    // if (tweet[0] && tweet[0].contentWithEmail !== undefined) {
+    //     console.log(tweet[0].contentWithEmail)
+    // } else {
+    //     console.log('contentWithEmail property not found on tweet[0]')
+    // }
 })
