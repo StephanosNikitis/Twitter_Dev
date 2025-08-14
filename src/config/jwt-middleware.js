@@ -1,13 +1,15 @@
 import JWT from 'passport-jwt'
 import User from '../models/user.js'
 
+import { SECRET_KEY } from './serverConfig.js'
+
 const JwtStrategy = JWT.Strategy
 
 const ExtractJwt = JWT.ExtractJwt
 
 const opts = {
     jwtFromRequest: ExtractJwt.fromAuthHeaderAsBearerToken(),
-    secretOrKey: 'twitter_secret'
+    secretOrKey: SECRET_KEY
 }
 
 export const passportAuth = (passport) => {
