@@ -11,6 +11,7 @@ class TweetRepository extends CrudRepository {
             return tweet
         } catch (error) {
             console.error(error)
+            throw error
         }
     }
 

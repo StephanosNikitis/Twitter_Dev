@@ -9,8 +9,8 @@ import { authenticate } from '../../middlewares/authenticate.js'
 
 const router = express.Router()
 
-// router.post('/tweets', authenticate, uploadMiddleware, createTweet)
-router.post('/tweets', uploadMiddleware, createTweet)
+router.post('/tweets', authenticate, uploadMiddleware, createTweet)
+// router.post('/tweets', uploadMiddleware, createTweet)
 router.get('/tweets/:id', getTweet)
 
 router.post('/like/toggle', toggleLike)
